@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Nexus Hub</title>
+</head>
+<body>
+    <div class="container mx-auto font-NovaMono text-nexus-logo text-center text-4xl">
+        
+    </div>
+    <!-- Header -->
+    <header>
+        <nav class="container flex flex-col lg:flex-row py-4 mt-4 mx-auto">
+            <div class="flex-none pt-2 text-center font-NovaMono text-nexus-logo text-5xl cursor-pointer">
+                nexus hub
+            </div>
+            <ul class="flex flex-1 py-4 gap-12 justify-center items-center text-lg font-Poppins">
+                <li class="cursor-pointer text-black hover:text-nexus-logo">Home</li>
+                <li class="cursor-pointer text-black hover:text-nexus-logo">About Us</li>
+                <li class="cursor-pointer text-black hover:text-nexus-logo">Services</li>
+            </ul>
+            <div class="flex py-4 gap-4 justify-center">
+                <button id="arkar_switch" class="flex w-20 h-10 hover:bg-opacity-80 rounded-full bg-nexus-blue justify-start items-center cursor-pointer">
+                    <div class="mr-1 ml-1 w-8 h-8 bg-nexus-yellow hover:bg-opacity-80 rounded-full"></div>
+                </button>
+                <button class="bg-nexus-blue hover:bg-opacity-80 px-4 py-2 text-white font-Poppins font-bold">Contact Us</button>
+            </div>
+        </nav>
+    </header>
+    <!-- Header -->
+    <script src="./TW-ELEMENTS-PATH/dist/js/index.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        var mySwitch = {
+            align: 'justify-start',
+            bg: 'bg-nexus-blue'
+        };
+        const sleep = ms => new Promise(r => setTimeout(r, ms));
+        $("#arkar_switch").click(async function(){
+            if(mySwitch.align=='justify-start'){
+                mySwitch.align='justify-end';
+                $( "#arkar_switch" ).animate({ "padding-left": "38px" }, "fast" );
+            }else{
+                mySwitch.align='justify-start'
+                $( "#arkar_switch" ).animate({ "padding-left": "2px" }, "fast" );
+            }
+        });
+    });
+    </script>
+</body>
+</html>
