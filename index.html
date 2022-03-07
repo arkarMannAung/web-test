@@ -37,8 +37,28 @@
     <!-- Header -->
 
     <!-- hero section -->
-    <section class="container mx-auto relative my-12">
-        <div class="flex flex-col-reverse md:flex-row">
+    <section class="relative my-12">
+        <!-- stack image -->
+        <div class="container mx-auto flex items-center justify-center">
+            <img class="" src="assets/hero_one/triDot.png" alt="">
+        </div>
+        <div class="absolute left-0 top-0">
+            <img class="" src="assets/hero_one/half_circle.png" alt="">
+        </div>
+        <div class="absolute right-0 top-0">
+            <img class="" src="assets/hero_one/two_hax.png" alt="">
+        </div>
+        <div class="absolute left-0 bottom-0">
+            <img class="" src="assets/hero_one/two_ract.png" alt="">
+        </div>
+        <div class="absolute right-0 bottom-20">
+            <img class="" src="assets/hero_one/two_circle.png" alt="">
+        </div>
+        <!-- <div class="relative top-0">
+            <img class="" src="assets/hero_one/triDot.png" alt="">
+        </div> -->
+        <!-- stack image -->
+        <div class="container mx-auto flex flex-col-reverse md:flex-row">
             <div class="flex flex-1 flex-col items-center md:items-start">
                 <div class="font-Poppins  pt-12 md:pt-0 py-3 text-nexus-blue text-lg">
                     COLLABORATE TO SUCCEED
@@ -51,19 +71,23 @@
                     Anywhere and Anytime for only $10
                 </div>
                 <div class="py-3">
-                    <button class="rounded-sm text-white font-bold bg-gradient-to-r from-nexus-blue to-nexus-linear px-4 py-2">
+                    <button id="test" class="rounded-sm text-white font-bold bg-gradient-to-r from-nexus-blue to-nexus-linear px-4 py-2">
                         Contact Us <i class="fa-solid fa-arrow-right"></i>
                     </button>
+                    <div class="h-48"></div>
                 </div>
             </div>
             <div class="flex flex-1 pt-8 items-center justify-center">
-                <img class="px-20 md:px-8" src="assets/astronaut.png" alt="astronaut photo">
-                <img class="absolute w-4/5 md:w-1/2" src="assets/bg-star.png" alt="">
+                <img class="px-20 md:px-8" src="assets/hero_one/astronaut.png" alt="astronaut photo">
+                <img id="img-star" class="absolute w-4/5 md:w-1/2 lg:w-5/12" src="assets/hero_one/bg-star.png" alt="">
             </div>
         </div>
     </section>
     <!-- hero section -->
 
+    <div class="py-20">
+
+    </div>
 
 
 
@@ -73,6 +97,29 @@
     <script src="jquery.min.js"></script>
     <script>
     $(document).ready(function(){
+        var degree = 0;
+        setInterval(function(){
+            $("#img-star").fadeIn(500);
+            $("#img-star").fadeOut(500);
+            // if(degree>=360){
+            //     degree=0;
+            // }else{
+            //     degree+=15;
+            // }
+            // $("#img-star").css({
+            //     transform: 'rotate(' + degree + 'deg)'
+            // });
+        },2000);
+        function AnimateRotate(d) {
+            console.log(d + 'here');
+            $("#img-star").animate({
+            '-moz-transform':'rotate('+d+'deg)',
+            '-webkit-transform':'rotate('+d+'deg)',
+            '-o-transform':'rotate('+d+'deg)',
+            '-ms-transform':'rotate('+d+'deg)',
+            'transform':'rotate('+d+'deg)'
+            }, 1000); 
+        }
         var mySwitch = {
             align: 'justify-start',
             bg: 'bg-nexus-blue'
@@ -90,7 +137,9 @@
         $("#dropdownButton").click(function(){
             $("#dropdown").toggleClass("hidden");
         });
-
+        $("#test").click(function(){
+            $("#img-star").fadeOut(500);
+        });
     });
     </script>
 </body>
