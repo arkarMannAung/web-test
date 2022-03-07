@@ -13,14 +13,14 @@
     <header>
         <nav class="container flex flex-col md:flex-row py-4 mt-4 mx-auto">
             <div class="flex pt-2 justify-between text-left font-NovaMono text-nexus-logo text-3xl px-8 sm:px-0 sm:text-4xl lg:text-5xl cursor-pointer">
-                <div class="flex">
+                <div class="flex pointer-events-none select-none">
                     nexus hub
                 </div>
-                <div class="md:hidden" id="dropdownButton">
+                <button class="md:hidden select-none" id="dropdownButton">
                     <i class="fas fa-bars text-3xl"></i>
-                </div>
+                </button>
             </div>
-            <ul class="hidden md:flex flex-1 px-8 sm:px-0 flex-col md:flex-row py-4 gap-2 md:gap-12 justify-center items-center text-lg font-Poppins" id="dropdown">
+            <ul class="hidden md:show md:flex flex-1 px-8 sm:px-0 flex-col md:flex-row py-4 gap-2 md:gap-12 justify-center items-center text-lg font-Poppins" id="dropdown">
                 <li class="w-full md:w-auto cursor-pointer text-center text-black hover:bg-opacity-80 bg-nexus-blue bg-opacity-40 px-6 py-1 rounded-sm">Home</li>
                 <li class="w-full md:w-auto cursor-pointer text-center text-black hover:bg-opacity-80 hover:bg-nexus-blue bg-opacity-40 px-6 py-1 rounded-sm">About Us</li>
                 <li class="w-full md:w-auto cursor-pointer text-center text-black hover:bg-opacity-80 hover:bg-nexus-blue bg-opacity-40 px-6 py-1 rounded-sm">Services</li>
@@ -55,7 +55,7 @@
             }
         });
         $("#dropdownButton").click(function(){
-            $("#dropdown").toggle();
+            $("#dropdown").toggleClass("hidden");
         });
         // $("body").click(function(){
         //     if($("#dropdown").css("display")=='flex'){
